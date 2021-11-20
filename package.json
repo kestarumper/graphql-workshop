@@ -1,0 +1,60 @@
+{
+  "name": "graphql-workshop",
+  "version": "1.0.0",
+  "description": "PokeAPI GraphQL Server",
+  "scripts": {
+    "start": "concurrently npm:watch:server npm:start:client npm:start:server",
+    "start:client": "parcel serve --no-autoinstall --no-cache --dist-dir dist/client client/index.html",
+    "start:server": "cp server/schema.graphql dist/server && nodemon dist/server/index.js",
+    "watch:server": "parcel watch --no-autoinstall --no-cache --dist-dir dist/server server/index.ts --target node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kestarumper/graphql-workshop.git"
+  },
+  "keywords": [
+    "GraphQL",
+    "PokeAPI",
+    "Apollo"
+  ],
+  "author": "Adrian Mucha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kestarumper/graphql-workshop/issues"
+  },
+  "homepage": "https://github.com/kestarumper/graphql-workshop#readme",
+  "dependencies": {
+    "@apollo/client": "3.4.17",
+    "apollo-server": "3.5.0",
+    "graphql": "15.7.2",
+    "lodash": "4.17.21",
+    "node-fetch": "2.6.6",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-graphql": "2.0.1",
+    "@types/lodash": "4.14.177",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "babel-eslint": "10.1.0",
+    "concurrently": "6.4.0",
+    "eslint": "8.2.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-vazco": "6.2.0",
+    "eslint-plugin-babel": "5.3.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.27.1",
+    "eslint-plugin-vazco": "1.0.0",
+    "nodemon": "2.0.15",
+    "parcel": "2.0.1",
+    "prettier": "2.4.1",
+    "ts-node": "10.4.0",
+    "typescript": "4.5.2"
+  },
+  "targets": {
+    "node": {
+      "context": "node"
+    }
+  }
+}
