@@ -1,0 +1,9 @@
+type Pokemon {
+  id: ID!
+  name: String!
+  friends: [Pokemon!]!
+}
+
+type Query {
+  pokemon(id: ID!): Pokemon
+}
