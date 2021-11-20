@@ -1,0 +1,10 @@
+query simple($id: ID!) {
+  pokemon(id: $id) {
+    id
+    name
+    friends {
+      id
+      name
+    }
+  }
+}
